@@ -6,27 +6,18 @@
 */
 
 function nameMenuItem(item) {
-    // Please write your code here
+    return "Delicious " + item;
 }
-
-
-
-
-
-
 
 /* 2
 ----Write a function called createMeuItem that creates and return an object with the new item name, price and a type
 ----Your function should return an object with the keys of 'name', 'price' and 'type'
 ----Example: createMenuItem("Cheesecake", 7.50, "Pastry") : createMenuItem.name -> "Cheesecake", createMenuItem.price -> 7.50, createMenuItem.type -> "Pastry"
 */
+
 function createMenuItem(name, price, type){
-    // Please write your code here
+    return {name: name, price: price, type: type};
 }
-
-
-
-
 
 /* 3
 ----Write a function called addIngridients that takes in the name of
@@ -35,44 +26,35 @@ function createMenuItem(name, price, type){
 ----addIngredients("Flour", ["Water", "Butter"]) -> ["Water", "Butter", "Flour"];
 ----addIngredients("Water", ["Water", "Butter"]) -> ["Water", "Butter"];
 */
+
 function addIngredients(ingredient, ingredientArray) {
-    // Please write your code here
+    for(var i = ingredientArray.length; i >= 1; i--){
+        if(ingredientArray[i - 1] == ingredient){
+            return ingredientArray;
+        }        
+    }
+    return ingredientArray.push(ingredient);
 }
-
-
-
 
 /* 4
 ----Write a function called formatPrice that takes in a price
 ----and returns a '$' in front of the price passed in
 ----formatPrice(23.12) -> $23.12;
 */
+
 function formatPrice(price){
-    // Please write your code here
+    return ("$" + price);    
 }
-
-
-
-
-
-
-
-
 
 /* 5
 ----Write a function called decreasePrice that takes in a price
 ----and returns a price with a 10% reduction
 ----descreasePrice(100.00) -> 90.00
 */
+
 function decreasePrice(price){
-    // Please write your code here
+    return (price * 0.9);
 }
-
-
-
-
-
-
 
 /* 6
 ----Write a function called createRecipe that takes in a recipeTitle, recipeIngredients, and a menuType
@@ -81,5 +63,5 @@ function decreasePrice(price){
 ----createRecipe("Delicious Grilled Cheese", ["bread", "cheese", "butter"], "lunch");  recipe.title -> "Delicious Grilled Cheese"; recipe.recipeIngredients -> ["bread", "cheese", "butter"]; recipe.menuType -> "lunch";
 */
 function createRecipe(recipeTitle, recipeIngredients, menuType) {
-    // Please write your code here
+    return {title: recipeTitle, ingredients: recipeIngredients, type: menuType};
 }
